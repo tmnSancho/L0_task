@@ -2,6 +2,6 @@ package service
 
 type Service struct {
 	pgDatabase pgDatabase
-	cache      memcache
+	cache      memCache
 	subscriber natsSubscriber
 }
