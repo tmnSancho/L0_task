@@ -41,9 +41,9 @@ func (c *Cache) UploadCache(orders []model.Order) error {
 	return nil
 }
 
-func (c *Cache) GetOrderById(id string) (model.Order, bool) {
+func (c *Cache) GetOrderById(id string) model.Order {
 	c.mutex.RLock()
-	order, ok := c.cache[id]
+	order := c.cache[id]
 	c.mutex.RUnlock()
-	return order, ok
+	return order
 }

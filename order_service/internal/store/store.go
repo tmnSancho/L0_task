@@ -1,5 +1,7 @@
 package store
 
+import "order_service/internal/model"
+
 type Store struct {
 	db    pgRepo
 	cache memCache
@@ -20,4 +22,8 @@ func (s *Store) UploadCache() error {
 	}
 
 	return nil
+}
+
+func (s *Store) GetOrderById(id string) *model.Order {
+	return s.cache.GetOrderFromCache(id)
 }
