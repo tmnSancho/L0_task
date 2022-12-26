@@ -3,8 +3,10 @@ package store
 import "order_service/internal/model"
 
 type pgRepo interface {
-	GetData() []model.Order
+	GetDataForCache() ([]model.Order, error)
 }
 
 type memCache interface {
+	GetOrderFromCache(orderUid string) *model.Order
+	UploadCache(orders []model.Order) error
 }

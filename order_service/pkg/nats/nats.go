@@ -34,7 +34,6 @@ func handle(msg *stan.Msg) {
 	}
 }
 
-// NewSubscription - creates new nats subscription
 func NewSubscription(conn stan.Conn, cfg Config, c chan model.Order) (stan.Subscription, error) {
 	ch = c
 	sub, err := conn.Subscribe(
