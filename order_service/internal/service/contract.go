@@ -1,14 +1,8 @@
 package service
 
-type pgDatabase interface {
-	SaveOrder()
-	GetOrder()
-}
-
-type memCache interface {
-	UploadCache()
+type store struct {
 }
 
 type natsSubscriber interface {
-	ReciveMsg()
+	Subscribe()
 }
