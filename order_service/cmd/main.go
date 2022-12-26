@@ -11,5 +11,5 @@ func main() {
 	m := model.Order{}
 	fmt.Print(m)
 
-	db := repo.NewPgOrderRepo()
+	db := repo.NewPgRepo()
 }
