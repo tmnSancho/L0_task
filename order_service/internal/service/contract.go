@@ -1,8 +1,8 @@
 package service
 
-type store struct {
-}
+import "order_service/internal/model"
 
-type natsSubscriber interface {
-	Subscribe()
+type store interface {
+	GetOrderById(id string) *model.Order
+	UploadCache() error
 }

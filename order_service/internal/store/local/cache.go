@@ -47,3 +47,9 @@ func (c *Cache) GetOrderById(id string) model.Order {
 	c.mutex.RUnlock()
 	return order
 }
+
+func (c *Cache) Set(order model.Order) {
+	c.mutex.RLock()
+	c.cache[order.OrderUID] = order
+	c.mutex.RUnlock()
+}

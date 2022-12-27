@@ -14,7 +14,6 @@ type Config struct {
 	ClusterID string
 	ClientID  string
 	Channel   string
-	URL       string
 }
 
 func handle(msg *stan.Msg) {

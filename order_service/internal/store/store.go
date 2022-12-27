@@ -27,3 +27,8 @@ func (s *Store) UploadCache() error {
 func (s *Store) GetOrderById(id string) *model.Order {
 	return s.cache.GetOrderFromCache(id)
 }
+
+func (s *Store) Set(order model.Order) error {
+	s.cache.Set(order)
+	return s.db.Set(order)
+}
