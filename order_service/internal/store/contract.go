@@ -10,5 +10,5 @@ type pgRepo interface {
 type memCache interface {
 	GetOrderFromCache(orderUid string) *model.Order
 	UploadCache(orders []model.Order) error
-	Set(order model.Order) error
+	Set(order model.Order)
 }
