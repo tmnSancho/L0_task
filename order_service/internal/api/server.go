@@ -8,7 +8,7 @@ import (
 	"github.com/gorilla/mux"
 )
 
-func StartService(orderService orderService) {
+func StartService(store store) {
 	r := mux.NewRouter()
 
 	r.HandleFunc("/", func(writer http.ResponseWriter, request *http.Request) {
@@ -19,7 +19,7 @@ func StartService(orderService orderService) {
 	r.HandleFunc("/order", func(writer http.ResponseWriter, request *http.Request) {
 		orderUid := request.FormValue("order_uid")
 
-		order := orderService.GetOrderById(orderUid)
+		order := store.GetOrderById(orderUid)
 
 		if order.OrderUID == "" {
 			tempStruct := struct {
