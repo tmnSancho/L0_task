@@ -2,6 +2,7 @@ package config
 
 import (
 	"order_service/pkg/nats"
+	"order_service/internal/pgrepo"
 )
 
 type Config struct {
