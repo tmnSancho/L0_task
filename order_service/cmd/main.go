@@ -8,6 +8,8 @@ import (
 	"order_service/internal/service"
 	"order_service/internal/store"
 	"order_service/pkg/nats"
+	"order_service/internal/pgrepo"
+	"order_service/internal/local"
 
 	"github.com/nats-io/stan.go"
 )
